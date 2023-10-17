@@ -1,12 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exam 3 Form Validation</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/register.css" />
+  <title>Exam 3</title>
 </head>
 <body>
-    <script src="main.js"></script>
+  <header class="header">
+    <div class="container">
+      <div class="header__wrapper">
+        <img src="./images/logo.svg" alt="site logo" />
+        <a class="header__link" href="./login.html">Login</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero__wrapper">
+          <div class="hero__desc-wrapper">
+            <strong class="hero__heading m-auto">Welcome</strong>
+            <p class="hero__desc">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam
+              duis vitae curabitur amet, fermentum lorem.
+            </p>
+          </div>
+          <form class="hero__form form">
+            <div class="form__inner">
+              <label class="form__label">
+                <span class="form__span span-name"> First Name: </span>
+                <input
+                class="form__input input-first-name"
+                type="text" 
+                arial-label="Enter your name"
+                placeholder="Enter your name"
+                />
+                <span class="invalid-span-first-name">
+                </span>
+              </label>
+              <label class="form__label">
+                <span class="form__span span-surname"> Last name </span>
+                <input
+                class="form__input input-last-name"
+                type="text"
+                arial-label="Enter your last name"
+                placeholder="Enter your last name"
+                />
+                <span class="invalid-span-last-name">
+                </span>
+              </div>
+            </label>
+            <label class="form__label label-email">
+              <span class="form__span span-email"> E-mail </span>
+              <input
+              class="form__input input-email"
+              type="text"
+              arial-label="Enter your email"
+              placeholder="Enter your email"
+              />
+              <span class="invalid-span invalid-email">
+              </span>
+              <i class="email-btn"></i>
+            </label>
+            <label class="form__label">
+              <span class="form__span span-pasword span-pas"> Password </span>
+              <input
+              class="form__input input-pasword"
+              type="password"
+              arial-label="Enter your pasword"
+              placeholder="Enter your pasword"
+              />
+              <span class="invalid-span invalid-password">
+              </span>
+              <button class="eye-Btn" type="button"></button>
+            </label>
+            <label class="form__label">
+              <span class="form__span span-rpasword span-pasr"> Repeat Password </span>
+              <input
+              class="form__input input-repeat-password"
+              type="password"
+              arial-label="Enter your repeat pasword"
+              placeholder="Enter your repeat pasword"
+              />
+              <span class="invalid-span invalid-repassword">
+              </span>
+              <button class="eye-BtnR" type="button"></button>
+            </label> 
+            <label class="form__label form__select-label">  
+              <span class="form__span span-gender"> Gender </span>
+              <select class="form__select select-value" required>
+                <option value="" selected hidden>Select your gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+              <span class="invalid-span invalid-select">
+                Please enter your name correctly
+              </span>
+              <button class="form__select-btn" type="button"></button>
+            </label>
+            <label class="form__label">
+              <span class="form__span span-birthday"> Birthday </span>
+              <input
+              class="form__input input-Birthday"
+              type="date"
+              arial-label="Enter your Birthday"
+              placeholder="Enter your Birthday"
+              required />
+              <span class="invalid-span invalid-birthday">
+                Please enter your name correctly
+              </span>
+            </label>
+            <label class="form__checkbox">
+              <input class="input-checkbox" type="checkbox" required>
+              <p class="form__checkbox-desc">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                <a class="form__checkbox-link" href="#">
+                  Gravida eget ultricies
+                </a> pharetra scelerisque duis cursus.
+              </p>
+            </label>
+            <button class="form__btn" type="submit">Enter</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <div class="footer__wrapper">
+        <div class="footer__inner">
+          <img class="footer__img" src="./images/logo.svg" alt="site logo">
+          <p class="footer__desc">
+            Copyright © 2021 BRIX Templates | All Rights Reserved
+          </p>
+        </div>
+        <form class="footer__form">
+          <label class="footer__label">
+            <input class="footer__input" type="email" arial-label="Enter your email" placeholder="Enter your email">
+            <button class="footer__btn" type="submit">
+              Subscribe
+            </button>
+          </label>
+        </form>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="js/register.js"></script>
 </body>
 </html>
