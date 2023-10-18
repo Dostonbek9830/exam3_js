@@ -1,51 +1,51 @@
-const elForm = document.querySelector('form')
-const elFirstNameInput = document.querySelector(".input-name");
-const elEmailInput = document.querySelector(".input-email");
-const elPhoneInput = document.querySelector(".input-number");
-const elCompanyInput = document.querySelector(".input-company");
-const elNameInvalid = document.querySelector(".error-name");
-const elEmailInvalid = document.querySelector(".error-email");
-const elPhoneInvalid = document.querySelector(".error-number");
-const elCompanyInvalid = document.querySelector(".error-number");
-const elNameResult = document.querySelector('.output-name')
-const elEmailResult = document.querySelector('.output-email')
-const elPhoneResult = document.querySelector('.output-contact')
-const elCompanyResult = document.querySelector('.output-company')
-const elAllResult = document.querySelector('#results')
-const elRadioInputs = document.querySelectorAll('input[type="radio"]');
-const elServiceOutput = document.querySelector('.output-service');
-const elBudgetOutput = document.querySelector('.output-budjet');
-const elDetails = document.querySelector(".details-wrapper");
-
-
-function updateSelectedService() {
-    const selectedService = [...elRadioInputs].find(input => input.checked);
-    if (selectedService) {  
-        elServiceOutput.textContent = selectedService.value;
-    }
-}
-
-function updateSelectedBudget() {
-    const selectedBudget = [...document.querySelectorAll('input[name="budjet"]')].find(input => input.checked);
-    if (selectedBudget) {
-        elBudgetOutput.textContent = selectedBudget.parentElement.querySelector('.budjet__span').textContent;
-    }
-}
-
-elRadioInputs.forEach(input => {
-    input.addEventListener('change', function () {
-        updateSelectedService();
-        updateSelectedBudget();
-    });
-});
-
-updateSelectedService();
-updateSelectedBudget();
-
 document.addEventListener("DOMContentLoaded", function () {
+    const elForm = document.querySelector('form');
+    const elFirstNameInput = document.querySelector(".input-name");
+    const elEmailInput = document.querySelector(".input-email");
+    const elPhoneInput = document.querySelector(".input-number");
+    const elCompanyInput = document.querySelector(".input-company");
+    const elNameInvalid = document.querySelector(".error-name");
+    const elEmailInvalid = document.querySelector(".error-email");
+    const elPhoneInvalid = document.querySelector(".error-number");
+    const elCompanyInvalid = document.querySelector(".error-number");
+    const elNameResult = document.querySelector('.output-name');
+    const elEmailResult = document.querySelector('.output-email');
+    const elPhoneResult = document.querySelector('.output-contact');
+    const elCompanyResult = document.querySelector('.output-company');
+    const elAllResult = document.querySelector('#results');
+
+    const elRadioInputs = document.querySelectorAll('input[type="radio"]');
+    const elServiceOutput = document.querySelector('.output-service');
+    const elBudgetOutput = document.querySelector('.output-budjet');
+    const elDetails = document.querySelector(".details-wrapper");
+
+    function updateSelectedService() {
+        const selectedService = [...elRadioInputs].find(input => input.checked);
+        if (selectedService) {  
+            elServiceOutput.textContent = selectedService.value;
+        }
+    }
+
+    function updateSelectedBudget() {
+        const selectedBudget = [...document.querySelectorAll('input[name="budjet"]')].find(input => input.checked);
+        if (selectedBudget) {
+            elBudgetOutput.textContent = selectedBudget.parentElement.querySelector('.budjet__span').textContent;
+        }
+    }
+
+    elRadioInputs.forEach(input => {
+        input.addEventListener('change', function () {
+            updateSelectedService();
+            updateSelectedBudget();
+        });
+    });
+
+    updateSelectedService();
+    updateSelectedBudget();
+
     elForm.addEventListener("submit", function(evt) {
         evt.preventDefault();
-        
+
         const nameValue = elFirstNameInput.value.trim();
         const emailValue = elEmailInput.value.trim();
         const phoneValue = elPhoneInput.value.trim();
@@ -105,23 +105,18 @@ document.addEventListener("DOMContentLoaded", function () {
         phoneValue !== "" &&
         companyValue !== "" &&
         elRadioInputs && elForm.querySelector('input[type="radio"]:checked')) {
-            elDetails.style.display = 'none';
-            elAllResult.style.display = 'block';
-        } else {
-            alert("Please fill in all required fields and select a service and budget.");
-        }
-        
+        elForm.style.display = 'none'; // Hide the form
+        elAllResult.classList.remove("d-none"); // Show the result element
+    } else {
+        alert("Please fill in all required fields and select a service and budget.");
+    }
+    
+
     });
 });
 
-
-
-
-
-
-
-
-$(document).ready(function(){
+// Your jQuery code for the slick slider
+$(document).ready(function () {
     $('.details__list').slick({
         dots: false,
         infinite: false,
@@ -130,3 +125,7 @@ $(document).ready(function(){
         cssEase: 'linear'
     });
 });
+
+
+
+
