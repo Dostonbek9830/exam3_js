@@ -13,7 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const elPhoneResult = document.querySelector('.output-contact');
     const elCompanyResult = document.querySelector('.output-company');
     const elAllResult = document.querySelector('#results');
-
+    const elTitle = document.querySelector(".details__title");
+    const elDesc = document.querySelector(".details__desc");
     const elRadioInputs = document.querySelectorAll('input[type="radio"]');
     const elServiceOutput = document.querySelector('.output-service');
     const elBudgetOutput = document.querySelector('.output-budjet');
@@ -105,8 +106,10 @@ document.addEventListener("DOMContentLoaded", function () {
         phoneValue !== "" &&
         companyValue !== "" &&
         elRadioInputs && elForm.querySelector('input[type="radio"]:checked')) {
-        elForm.style.display = 'none'; // Hide the form
-        elAllResult.classList.remove("d-none"); // Show the result element
+        elForm.style.display = 'none'; 
+        elTitle.style.display = 'none'
+        elDesc.style.display = "none"
+        elAllResult.classList.remove("d-none"); 
     } else {
         alert("Please fill in all required fields and select a service and budget.");
     }
@@ -115,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// Your jQuery code for the slick slider
+
 $(document).ready(function () {
     $('.details__list').slick({
         dots: false,
